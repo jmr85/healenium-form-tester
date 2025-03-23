@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+	<h1 class="text-center text-3xl font-bold mb-8">Registration Form</h1>
+    <form id="studentRegistrationForm">
+      <!-- Name Fields -->
+      <div class="form-grid">
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="First Name">
+        </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name">
+        </div>
+      </div>
+
+      <!-- Email -->
+      <label for="email">Your email</label>
+      <input type="email" id="email" placeholder="name@example.com">
+
+      <!-- Gender -->
+      <label>Gender</label>
+      <div class="radio-group">
+        <div class="radio-container">
+          <input type="radio" id="male" name="gender" value="Male">
+          <label for="male" class="checkbox-label">Male</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" id="female" name="gender" value="Female">
+          <label for="female" class="checkbox-label">Female</label>
+        </div>
+      </div>
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile (10 Digits)</label>
+      <input type="tel" id="mobile" placeholder="Mobile Number">
+
+      <!-- Date of Birth -->
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="date" id="dateOfBirth">
+
+      <!-- Subjects -->
+      <label for="subjects">Subjects</label>
+      <input type="text" id="subjects" placeholder="Subjects">
+
+      <!-- Hobbies -->
+      <label>Hobbies</label>
+      <div class="radio-group">
+        <div class="checkbox-container">
+          <input type="checkbox" id="sports" name="hobbies" value="Sports">
+          <label for="sports" class="checkbox-label">Sports</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="reading" name="hobbies" value="Reading">
+          <label for="reading" class="checkbox-label">Reading</label>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="music" name="hobbies" value="Music">
+          <label for="music" class="checkbox-label">Music</label>
+        </div>
+      </div>
+
+      <!-- Current Address -->
+      <label for="currentAddress">Current Address</label>
+      <textarea id="currentAddress" rows="4" placeholder="Enter your current address"></textarea>
+
+      <!-- Country -->
+      <div class="form-grid">
+        <div>
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="" selected>Select Country</option>
+            <option value="argentina">Argentina</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="china">China</option>
+            <option value="france">France</option>
+            <option value="germany">Germany</option>
+            <option value="italy">Italy</option>
+            <option value="japan">Japan</option>
+            <option value="spain">Spain</option>
+            <option value="unitedKingdom">United Kingdom</option>
+            <option value="unitedStates">United States</option>            
+          </select>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitButton" disabled>Submit</button>
+    </form>
+
+    <!-- Footer -->
+    <div id="footer" class="footer"></div>
+  </div>
+  
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="assets/js/form-handler.js"> </script>
+</body>
+</html>
