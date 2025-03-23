@@ -225,45 +225,6 @@ function showToast(message, type = 'success', duration = 3000) {
     }, duration);
 }
 
-// Province-City dropdown connection for Argentina
-document.getElementById('province').addEventListener('change', function () {
-    const provinceValue = this.value;
-    const cityDropdown = document.getElementById('city');
-
-    // Clear current options
-    cityDropdown.innerHTML = '<option value="" selected>Select City</option>';
-
-    // Enable city dropdown if province is selected
-    if (provinceValue) {
-        cityDropdown.disabled = false;
-
-        // Add cities based on selected province
-        const cities = {
-            'buenosAires': ['La Plata', 'Mar del Plata', 'Bahía Blanca', 'Tandil', 'Quilmes', 'Avellaneda', 'Capitán Sarmiento'],
-            'cordoba': ['Córdoba Capital', 'Villa Carlos Paz', 'Río Cuarto', 'Villa María', 'Alta Gracia'],
-            'santaFe': ['Rosario', 'Santa Fe Capital', 'Rafaela', 'Venado Tuerto', 'Santo Tomé'],
-            'mendoza': ['Mendoza Capital', 'San Rafael', 'Godoy Cruz', 'Maipú', 'Luján de Cuyo'],
-            'tucuman': ['San Miguel de Tucumán', 'Yerba Buena', 'Tafí Viejo', 'Monteros', 'Concepción'],
-            'entreRios': ['Paraná', 'Concordia', 'Gualeguaychú', 'Concepción del Uruguay', 'Colón'],
-            'salta': ['Salta Capital', 'San Ramón de la Nueva Orán', 'Tartagal', 'Cafayate', 'Rosario de Lerma'],
-            'misiones': ['Posadas', 'Oberá', 'Eldorado', 'Puerto Iguazú', 'Apóstoles'],
-            'chaco': ['Resistencia', 'Barranqueras', 'Presidencia Roque Sáenz Peña', 'Villa Ángela', 'Charata'],
-            'corrientes': ['Corrientes Capital', 'Goya', 'Mercedes', 'Curuzú Cuatiá', 'Santo Tomé']
-        };
-
-        if (cities[provinceValue]) {
-            cities[provinceValue].forEach(city => {
-                const option = document.createElement('option');
-                option.value = city.toLowerCase().replace(/\s+/g, '-'); // Convert spaces to dashes
-                option.textContent = city;
-                cityDropdown.appendChild(option);
-            });
-        }
-    } else {
-        cityDropdown.disabled = true;
-    }
-});
-
 // Form submission with validation
 document.getElementById('studentRegistrationForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -288,8 +249,7 @@ document.getElementById('studentRegistrationForm').addEventListener('submit', fu
             subjects: document.getElementById('subjects').value,
             hobbies: Array.from(document.querySelectorAll('input[name="hobbies"]:checked')).map(el => el.value),
             currentAddress: document.getElementById('currentAddress').value,
-            province: document.getElementById('province').value,
-            city: document.getElementById('city').value,
+            country: document.getElementById('country').value,
             remember: document.getElementById('remember').checked
         };
 
