@@ -14,10 +14,11 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <allure.version>2.26.0</allure.version>
-    <aspectj.version>1.9.22</aspectj.version>
+    <aspectj.version>1.9.20.1</aspectj.version>
   </properties>
 
     <!-- Añade allure-bom a la gestión de dependencias para garantizar que se utilizan las versiones correctas de todas las dependencias -->
@@ -30,11 +31,6 @@
               <type>pom</type>
               <scope>import</scope>
           </dependency>
-           <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>7.9.0</version>
-            </dependency>
       </dependencies>
   </dependencyManagement>
 
@@ -43,6 +39,8 @@
     <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
+        <version>7.10.2</version>
+        <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
@@ -92,6 +90,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <source>21</source> <!--For JAVA 8 use 1.8-->
+            <target>21</target> <!--For JAVA 8 use 1.8-->
+          </configuration>
         </plugin>
         <!-- <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -100,12 +102,15 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.5</version>
+          <version>3.3.1</version>
           <configuration>
               <argLine>
-                  -Dfile.encoding=${project.build.sourceEncoding}
                   -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
               </argLine>
+              <testNGArtifactName>org.testng:testng</testNGArtifactName>
+              <suiteXmlFiles>      
+                <suiteXmlFile>testng.xml</suiteXmlFile>    
+              </suiteXmlFiles>
           </configuration>
           <dependencies>
               <dependency>
@@ -139,19 +144,10 @@
         <plugin>
           <groupId>io.qameta.allure</groupId>
           <artifactId>allure-maven</artifactId>
-          <version>2.12.0</version>
+          <version>2.15.0</version>
           <configuration>
             <reportVersion>${allure.version}</reportVersion>
             <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
-          <configuration>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <release>21</release>
           </configuration>
         </plugin>
       </plugins>

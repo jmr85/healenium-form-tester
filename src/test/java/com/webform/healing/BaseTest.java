@@ -28,9 +28,9 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         
         delegate = new ChromeDriver();
-
         driver = SelfHealingDriver.create(delegate);
 
         driver.manage().window().maximize();
