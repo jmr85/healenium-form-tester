@@ -8,8 +8,6 @@ import org.testng.annotations.BeforeMethod;
 
 import com.epam.healenium.SelfHealingDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BaseTest {
 
     public WebDriver delegate;
