@@ -18,5 +18,7 @@ public class FormTest extends BaseTest {
                 .inputSubjects("Computer Science")
                 .selectCountry("Argentina")
                 .clickSubmitButton();
+
+        screenshot();
     }
 }

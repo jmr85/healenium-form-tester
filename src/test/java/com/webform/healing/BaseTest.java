@@ -1,5 +1,7 @@
 package com.webform.healing;
 
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,6 +12,8 @@ import org.testng.annotations.Listeners;
 import com.epam.healenium.SelfHealingDriver;
 
 import com.webform.healing.listeners.TestListener;
+
+import io.qameta.allure.Attachment;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -35,5 +39,10 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();   
         }
+    }
+
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] screenshot() {
+        return ((TakesScreenshot) ((SelfHealingDriver) driver).getDelegate()).getScreenshotAs(OutputType.BYTES);
     }
 }
