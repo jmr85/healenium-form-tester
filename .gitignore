@@ -25,3 +25,6 @@ reports/
 allure-results/
 allure-report/
 .allure
+
+# log
+*.log
