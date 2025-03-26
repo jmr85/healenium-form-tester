@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Form Input Failures",
+      "matchedStatuses": ["broken", "failed"],
+      "messageRegex": ".*((txtFirstName)|(txtLastName)|(txtEmail)|(txtMobileNumber)|(txtSubjects)).*"
+    },
+    {
+      "name": "Selection Failures",
+      "matchedStatuses": ["broken", "failed"],
+      "messageRegex": ".*((chkMale)|(chkSports)|(ddlCountry)).*"
+    },
+    {
+      "name": "Date Field Failures",
+      "matchedStatuses": ["broken", "failed"],
+      "messageRegex": ".*dateOfBirth.*"
+    },
+    {
+      "name": "Button Interaction Failures",
+      "matchedStatuses": ["broken", "failed"],
+      "messageRegex": ".*btnSubmit.*"
+    },
+    {
+      "name": "Healenium Self-Healing Events",
+      "matchedStatuses": ["passed", "broken", "failed"],
+      "messageRegex": ".*((SelfHealingDriver)|(healenium)).*"
+    },
+    {
+      "name": "Uncategorized Test Failures",
+      "matchedStatuses": ["failed"],
+      "traceRegex": ".*"
+    }
+  ]
