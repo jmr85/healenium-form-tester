@@ -16,6 +16,7 @@ public class FormTest extends BaseTest {
                 .inputMobileNumber("1234567890")
                 .setDateOfBirth("1985-03-24")
                 .inputSubjects("Computer Science")
+                .inputCurrentAddress("9 de Julio Av., Buenos Aires")
                 .selectCountry("Argentina")
                 .clickSubmitButton();
 

@@ -17,6 +17,7 @@ public class FormPage {
     private By dateOfBirthField = By.id("dateOfBirth");
     private By txtSubjects = By.id("subjects");
     private By chkSports = By.id("sports");
+    private By txtAreaCurrentAddress = By.id("currentAddress");
     private By ddlCountry = By.id("country");
     private By btnSubmit = By.xpath("//button[text()='Submit']");
 
@@ -58,6 +59,11 @@ public class FormPage {
         if (!sportsCheckbox.isSelected()) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", sportsCheckbox);
         }
+        return this;
+    }
+
+    public FormPage inputCurrentAddress(String currentAddress) {
+        driver.findElement(txtAreaCurrentAddress).sendKeys(currentAddress);
         return this;
     }
     
