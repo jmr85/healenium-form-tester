@@ -1,4 +1,4 @@
-package com.webform.healing;
+package com.web.healing;
 
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.OutputType;
@@ -10,8 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 import com.epam.healenium.SelfHealingDriver;
-
-import com.webform.healing.listeners.TestListener;
+import com.web.healing.listeners.TestListener;
 
 import io.qameta.allure.Attachment;
 

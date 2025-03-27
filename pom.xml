@@ -4,13 +4,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.webform.healing</groupId>
-  <artifactId>healenium-form-tester</artifactId>
+  <groupId>com.web.healing</groupId>
+  <artifactId>healenium-web-automation</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>healenium-form-tester</name>
-  <!-- FIXME change it to the project's website -->
-  <url>https://github.com/jmr85/healenium-form-tester</url>
+  <name>healenium-web-automation</name>
+  
+  <url>https://github.com/jmr85/healenium-web-automation</url>
 
   <properties>
     <maven.compiler.release>21</maven.compiler.release>

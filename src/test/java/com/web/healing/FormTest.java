@@ -1,8 +1,8 @@
-package com.webform.healing;
+package com.web.healing;
 
 import org.testng.annotations.Test;
 
-import com.webform.healing.pages.FormPage;
+import com.web.healing.pages.FormPage;
 
 public class FormTest extends BaseTest {
 

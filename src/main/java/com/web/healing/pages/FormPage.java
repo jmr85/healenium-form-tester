@@ -1,4 +1,4 @@
-package com.webform.healing.pages;
+package com.web.healing.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
