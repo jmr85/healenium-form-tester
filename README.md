@@ -2,6 +2,7 @@
 Proyecto Java + Maven + Selenium con ejemplo de uso de Healenium
 
 ## Cómo empezar
+### 0. Instalar Docker Desktop
 ### 1.Iniciar el backend de Healenium desde la carpeta infra
 
 ```cd infra```
